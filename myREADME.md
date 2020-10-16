@@ -1,5 +1,14 @@
 # Markdown Links Blanca Arteaga
 
+Mi proceso de trabajo con MD-Links
+
+El objetivo de este proyecto es crear mi propia librería, usando node.js.
+
+Utilicé los conocimientos obtenidos en los cursos de LinkedIn Learning.
+Comencé por aprender los fundamentos de node.js.
+
+Los primeros conocimientos tienen que ver con el tipo de archivo que se ha de manipular en nuestra librería
+
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
