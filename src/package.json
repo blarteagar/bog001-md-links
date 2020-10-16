@@ -1,0 +1,25 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "BLAR MD-LINKS",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blarteagar/bog001-md-links.git"
+  },
+  "keywords": [
+    "http",
+    "node",
+    "link",
+    "testing"
+  ],
+  "author": "blarteagar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blarteagar/bog001-md-links/issues"
+  },
+  "homepage": "https://github.com/blarteagar/bog001-md-links#readme"
+}
