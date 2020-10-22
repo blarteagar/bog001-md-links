@@ -38,29 +38,29 @@ HU3: Yo como developer quiero probar cada link del archivo *.md para verificar l
 
 # Lista de Tareas
 La siguiente lista describe las tareas que espero que mi programa ejecute. En función de estas tareas, estudiaré paquetes de node.js a instalar, empezando por express, que parece muy recomendado para node.js.
-[ ] 1. Recibir peticiones de la línea de comandos CLI(requires lineread,stdin,stdout,stderr)
-[ ] 1.1. Recibir la ruta (route or path)
-[ ] 1.2. Recibir opción validate (validate or -v)
-[ ] 1.3. Recibir opción stats (stats or -s)
-[ ] 2. Abrir Archivos *.md para ver su contenido (requiere Filesystem fs)
-[ ] 2.1. Discriminar tipos de archivos (análisis de la ruta)
-[ ] 2.2. Abrir únicamente archivos markdown
-[ ] 2.3. Si la ruta conduce a una carpeta, se debe abrir el archivo (withFileTypes=True)
-[ ] 2.4. Si la ruta es absoluta, está bien. Si es relativa, debe resolverse a absoluta (process.pwd)
-[ ] 2.5. Manejar errores al abrir archivos (esto puede requerir acceso al objeto de errores)
-[ ] 2.5.1. Error en la extensión del archivo.
-[ ] 2.5.2. Error en la ruta. (Archivo no encontrado).
-[ ] 2.5.3. Errores en la data. (Archivo corrupto).
-[ ] 3. Analizar el contenido de los archivos (expresiones regulares y otras hierbas)
-[ ] 3.1. Detectar la presencia de `href`: URL encontrada.
-[ ] 3.2. Detectar la presencia de `text`: Texto que aparecía dentro del link (`<a>`).
-[ ] 3.3. Detectar la presencia de `file`: Ruta del archivo donde se encontró el link (truncado a 50 caracteres).
-[ ] 3.4. Detectar cuántos links se repiten.
-[ ] 3.4. Hacer petición http para saber si el link está roto.
-[ ] 4. Entregables
-[ ] 4.1. Generar el paquete instalable.
-[ ] 4.2. Tests unitarios.
-[ ] 4.2. Crear el módulo md-links.
+* [ ] 1. Recibir peticiones de la línea de comandos CLI(requires lineread,stdin,stdout,stderr)
+* [ ] 1.1. Recibir la ruta (route or path)
+* [ ] 1.2. Recibir opción validate (validate or -v)
+* [ ] 1.3. Recibir opción stats (stats or -s)
+* [ ] 2. Abrir Archivos *.md para ver su contenido (requiere Filesystem fs)
+* [ ] 2.1. Discriminar tipos de archivos (análisis de la ruta)
+* [ ] 2.2. Abrir únicamente archivos markdown
+* [ ] 2.3. Si la ruta conduce a una carpeta, se debe abrir el archivo (withFileTypes=True)
+* [ ] 2.4. Si la ruta es absoluta, está bien. Si es relativa, debe resolverse a absoluta (process.pwd)
+* [ ] 2.5. Manejar errores al abrir archivos (esto puede requerir acceso al objeto de errores)
+* [ ] 2.5.1. Error en la extensión del archivo.
+* [ ] 2.5.2. Error en la ruta. (Archivo no encontrado).
+* [ ] 2.5.3. Errores en la data. (Archivo corrupto).
+* [ ] 3. Analizar el contenido de los archivos (expresiones regulares y otras hierbas)
+* [ ] 3.1. Detectar la presencia de `href`: URL encontrada.
+* [ ] 3.2. Detectar la presencia de `text`: Texto que aparecía dentro del link (`<a>`).
+* [ ] 3.3. Detectar la presencia de `file`: Ruta del archivo donde se encontró el link (truncado a 50 caracteres).
+* [ ] 3.4. Detectar cuántos links se repiten.
+* [ ] 3.4. Hacer petición http para saber si el link está roto.
+* [ ] 4. Entregables
+* [ ] 4.1. Generar el paquete instalable.
+* [ ] 4.2. Tests unitarios.
+* [ ] 4.2. Crear el módulo md-links.
 
 ---FIN DEL README PERSONAL BLANCA ARTEAGA---
 ## Índice
