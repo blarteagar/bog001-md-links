@@ -5,9 +5,20 @@ Mi proceso de trabajo con MD-Links
 El objetivo de este proyecto es crear mi propia librería, usando node.js.
 
 Utilicé los conocimientos obtenidos en los cursos de LinkedIn Learning.
-Comencé por aprender los fundamentos de node.js.
+Comencé por aprender los fundamentos de node.js: instalación, npm, configuración de servidores, lectura de archivos, configuración de json y depuración de código.
 
-Los primeros conocimientos tienen que ver con el tipo de archivo que se ha de manipular en nuestra librería
+Historias de Usuario
+HU1: Yo como developer, quiero abrir un archivo *.md para ver su contenido.
+HU2: Yo como developer, quiero determinar cuántos links tiene el archivo *.md para determinar algunas de sus características.
+HU3: Yo como developer, 
+
+Tareas:
+1.
+2.
+3.
+4.
+5.
+6.
 
 ## Índice
 
@@ -39,8 +50,6 @@ Dentro de una comunidad de código abierto, nos han propuesto crear una
 herramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos
 en formato `Markdown`, para verificar los links que contengan y reportar
 algunas estadísticas.
-
-![md-links](https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg)
 
 ## 2. Resumen del proyecto
 

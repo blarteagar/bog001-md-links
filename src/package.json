@@ -1,5 +1,5 @@
 {
-  "name": "src",
+  "name": "md-links",
   "version": "1.0.0",
   "description": "BLAR MD-LINKS",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blarteagar/bog001-md-links.git"
+    "url": "https://github.com/blarteagar/bog001-md-links.git"
   },
   "keywords": [
     "http",

@@ -1,5 +1,68 @@
-# Markdown Links
+# MDLinks Library
+Blanca Arteaga
+BOG-001 Laboratorian (May-Sep 2020)
 
+Aquí se describen los aspectos relevantes para el uso de la librería MD-Links
+
+# Descripción del módulo
+MD-Links es un módulo que permite analizar archivos *.md para encontrar el número de enlaces (ligas, links) presentes en el mismo. Para ello, el usuario debe ingresar una ruta (path) y las opciones operativas --stats y/o --validate. Es posible omitir las opciones, o bien invocarlas combinadas o separadas.
+El comportamiento por defecto devuelve al usuario un objeto que, por cada link encontrado, muestra los siguientes resultados:
+"href": URL encontrada
+"text": Texto que aparece dentro del link (entre etiquetas `<a>`)
+"file": Ruta del archivo donde se encontró el link (truncado a 50 caracteres)
+...
+
+# Instrucciones de uso e instalación
+Para instalar el módulo, introducir este comando en el CLI:
+>npm install md-links
+...
+
+# Documentación del API
+...
+
+# Ejemplos
+...
+
+
+---FIN DEL MANUAL DE USO E INSTALACION---
+# (Notas mentales)
+El objetivo de este proyecto es crear mi propia librería, usando node.js. Utilicé los conocimientos obtenidos en los cursos de LinkedIn Learning "Node.js esencial": instalación de node.js y npm, sintaxis de node, configuración de servidores, lectura de archivos, configuración de json y depuración de código.
+También es interesante conocer un poco sobre markdown, su sintaxis y la manera de obtener etiquetas <a></a>, <href></href>, <text></text> (¡Cuando las escribí, markdown me las autocompletó! :O). Esto lo iré haciendo en paralelo con las pruebas manuales: prepararé algunos archivos markdown para tenerlos en una carpeta "readable" y analizar sus contenidos.
+
+Estoy creando una librería (conjunto de funciones o métodos que cumplen propósitos específicos) que deseo publicar en npm en forma de un módulo (que se puede invocar con el comando 'require'). Para que sea instalable, el código fuente debe estar publicado en GitHubS
+
+# Historias de Usuario
+HU1: Yo como developer quiero usar node.js para leer una ruta a un archivo *.md y determinar las acciones a realizar con ese documento.
+HU2: Yo como developer quiero recorrer el archivo *.md para determinar cuántos links contiene y obtener algunas de sus propiedades.
+HU3: Yo como developer quiero probar cada link del archivo *.md para verificar la respuesta obtenida.
+
+# Lista de Tareas
+La siguiente lista describe las tareas que espero que mi programa ejecute. En función de estas tareas, estudiaré paquetes de node.js a instalar, empezando por express, que parece muy recomendado para node.js.
+[] 1. Recibir peticiones de la línea de comandos CLI(requires lineread,stdin,stdout,stderr)
+[] 1.1. Recibir la ruta (route or path)
+[] 1.2. Recibir opción validate (validate or -v)
+[] 1.3. Recibir opción stats (stats or -s)
+[] 2. Abrir Archivos *.md para ver su contenido (requiere Filesystem fs)
+[] 2.1. Discriminar tipos de archivos (análisis de la ruta)
+[] 2.2. Abrir únicamente archivos markdown
+[] 2.3. Si la ruta conduce a una carpeta, se debe abrir el archivo (withFileTypes=True)
+[] 2.4. Si la ruta es absoluta, está bien. Si es relativa, debe resolverse a absoluta (process.pwd)
+[] 2.5. Manejar errores al abrir archivos (esto puede requerir acceso al objeto de errores)
+[] 2.5.1. Error en la extensión del archivo.
+[] 2.5.2. Error en la ruta. (Archivo no encontrado).
+[] 2.5.3. Errores en la data. (Archivo corrupto).
+[] 3. Analizar el contenido de los archivos (expresiones regulares y otras hierbas)
+[] 3.1. Detectar la presencia de `href`: URL encontrada.
+[] 3.2. Detectar la presencia de `text`: Texto que aparecía dentro del link (`<a>`).
+[] 3.3. Detectar la presencia de `file`: Ruta del archivo donde se encontró el link (truncado a 50 caracteres).
+[] 3.4. Detectar cuántos links se repiten.
+[] 3.4. Hacer petición http para saber si el link está roto.
+[] 4. Entregables
+[] 4.1. Generar el paquete instalable.
+[] 4.2. Tests unitarios.
+[] 4.2. Crear el módulo md-links.
+
+---FIN DEL README PERSONAL BLANCA ARTEAGA---
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
@@ -20,7 +83,7 @@
 ligero muy popular entre developers. Es usado en muchísimas plataformas que
 manejan texto plano (GitHub, foros, blogs, ...), y es muy común
 encontrar varios archivos en ese formato en cualquier tipo de repositorio
-(empezando por el tradicional `README.md`).
+(empezando por el popular `README.md`).
 
 Estos archivos `Markdown` normalmente contienen _links_ (vínculos/ligas) que
 muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de
@@ -59,8 +122,8 @@ A continuación puedes ver los objetivos de aprendizaje de este proyecto:
 
 ### JavaScript
 
-* [ ] Uso de condicionales (if-else | switch | operador ternario)
-* [ ] Uso de funciones (parámetros | argumentos | valor de retorno)
+* [x] Uso de condicionales (if-else | switch | operador ternario)
+* [x] Uso de funciones (parámetros | argumentos | valor de retorno)
 * [ ] Manipular arrays (filter | map | sort | reduce)
 * [ ] Manipular objects (key | value)
 * [ ] Uso ES modules ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
