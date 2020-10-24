@@ -1,54 +1,38 @@
 const fs = require ('fs');
+const path = require ('path');
+const readline = require('readline');
 
+/*Paths to read:
+absolute (correct):'C:/Users/USER/Documents/data/bog001-md-links/readable/folder/blar.md'
+absolute (correct):'C:/Users/USER/Documents/data/bog001-md-links/readable/folder/blar.mdoc'
+relative (correct):'../readable/folder/piar.md'
+relative (correct):'../readable/folder/piar.md'
+*/
 
-let path = '../readThis/checklist'
-/*let ext = path.slice(-3);
-if (ext === '.md'){
-console.log(path, ' es un archivo markdown');
-}else{
-console.log(path, ' contiene un tipo de archivo no admitido. Se detendrá la ejecución ahora');
-return;
-}*/
-
-//Método readFile para obtener el descriptor del archivo
-fs.readFile(path, 'utf-8', (error, data) => {
-  if (error) {
-    console.log('an error has occurred');
-    console.log(error.stack);
-  } else {
-    console.log('for', path, ' the file descriptor is ', data);
-  
-  }
+/*Código para generar la Línea de Lectura (Readline)*/
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
 });
 
-//Método open para obtener el descriptor del archivo
-  fs.open(path, 'r', (error, fd) => {
-    if (error) {
-      console.log('an error has occurred');
-      console.log(error.stack);
-    } else {
-      console.log('for', path, ' the file descriptor is ', fd);
-      
+/*Inicio de la interfaz de linea de comandos*/
+rl.question('md-links (route, options)? ', (route, options) => {
+    rl.close();
+  
+    //console.log(`La ruta a analizar es ${route}`);
+    let hasPeriod = new RegExp('[.]');
+    let ext = hasPeriod.test(route);
+    //console.log('¿hay un punto en la ruta?', ext);
+    let tail = route.indexOf('.');
+    //console.log('hay un punto en la posición ', tail, ' de la ruta')
+    let extFile = route.slice(tail);
+    //console.log('la extensión del archivo es ', extFile);
+    
+    if (ext === false){
+      console.log('ruta conduce a una carpeta')
+    }else if (extFile === ".md"){
+      console.log('ruta conduce a un archivo *.md')
+    }else{
+      console.log('ruta conduce a un archivo no soportado')
     }
-  });
-
-/*//Método stat para obtener detalles del archivo
-fs.stat(path, (err, data) => {
-  if (err) {
-    console.error(err)
-    return
-  }else {
-    console.log(data);
-    //we have access to the file stats in `stats`
-  }
-})
-
-
-
-/*
-código de Laboratoria
-module.exports = () => {
-  // ...
-};
-Fin del código de Laboratoria
-*/
+});
