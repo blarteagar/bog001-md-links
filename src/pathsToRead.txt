@@ -1,0 +1,12 @@
+Paths to read:
+C:/Users/USER/Documents/data/bog001-md-links/readable/folder/blar.md
+C:/Users/USER/Documents/data/bog001-md-links/readable/checklist.doc
+C:/Users/USER/Documents/data/bog001-md-links/readable/folder
+C:/Users/USER/Documents/data/bog001-md-links/readable/folder/piar.doc
+../readable/checklist.doc
+../readable/folder
+../readable/resources.doc
+../readable/folder/piar.md
+../readable/folder/blar.md
+../readable/notfound.txt
+../readable/notfound.md
