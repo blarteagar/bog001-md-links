@@ -3,6 +3,8 @@ C:/Users/USER/Documents/data/bog001-md-links/readable/folder/blar.md
 C:/Users/USER/Documents/data/bog001-md-links/readable/checklist.doc
 C:/Users/USER/Documents/data/bog001-md-links/readable/folder
 C:/Users/USER/Documents/data/bog001-md-links/readable/folder/piar.doc
+C:/Users/USER/Documents/data/bog001-md-links/readable/folder/notfound.md
+C:/Users/USER/Documents/data/bog001-md-links/readable/resources.md
 ../readable/checklist.doc
 ../readable/folder
 ../readable/resources.doc

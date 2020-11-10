@@ -92,39 +92,39 @@ fs.readFile(route, 'utf-8', (error, data) => {
     console.log('an error has occurred');
     console.log(error.stack);
   } else {
-    console.log('for', route, ' the content is ', data);  
+    console.log('for', route, ' the content is ', data);
   }
 });
 export const router = async (route) => {
 
   const content = document.getElementById("root");
-  
+
   switch (route) {
 
-      case "#register":         
-          content.innerHTML= await registerView.render();
-          registerView.afterRender();
-          break;
+    case "#register":
+      content.innerHTML = await registerView.render();
+      registerView.afterRender();
+      break;
 
-      case "#login":
-          content.innerHTML = await loginComponent.render();
-          loginComponent.afterRender();
-          break;
+    case "#login":
+      content.innerHTML = await loginComponent.render();
+      loginComponent.afterRender();
+      break;
 
-      case "#wall":
-          content.innerHTML = await  wallView.render();
-          wallView.afterRender();
-          loadPost();
-          break;
+    case "#wall":
+      content.innerHTML = await wallView.render();
+      wallView.afterRender();
+      loadPost();
+      break;
 
-      case "":
-          location.hash="#login"    
-          history.pushState("#login", "", "#login")
-          break;
+    case "":
+      location.hash = "#login"
+      history.pushState("#login", "", "#login")
+      break;
 
-      default:
-          "404 "
-          break;
+    default:
+      "404 "
+      break;
   }
 }
 
@@ -135,8 +135,8 @@ var util = require('util');
 var rl = readline.createInterface(process.stdin, process.stdout);
 
 var persona = {
-    nombre: '',
-    comentarios: []
+  nombre: '',
+  comentarios: []
 };
 
 rl.question('Cuál es tu nombre? ', (respuesta) => {
@@ -148,25 +148,40 @@ rl.question('Cuál es tu nombre? ', (respuesta) => {
 });
 
 rl.on('line', (input) => {
-    if(input.trim() === 'salir'){
-        var mensaje = util.format("Te llamas %s y esto me dijiste: %j", persona.nombre, persona.comentarios);
-        console.log(mensaje);
-        process.exit();
-    }
-    persona.comentarios.push(input.trim());
+  if (input.trim() === 'salir') {
+    var mensaje = util.format("Te llamas %s y esto me dijiste: %j", persona.nombre, persona.comentarios);
+    console.log(mensaje);
+    process.exit();
+  }
+  persona.comentarios.push(input.trim());
 
-    rl.setPrompt('Dime un comentario: ');
-    rl.prompt();
+  rl.setPrompt('Dime un comentario: ');
+  rl.prompt();
 });
 
 const request = https.request(options, (res) => {
-            context.log(`statusCode: ${res.statusCode}`);
+  context.log(`statusCode: ${res.statusCode}`);
 
   res.on('data', (d) => {
     process.stdout.write(d);
     context.log('LOOOL');
   })
 });
+
+//
+//console.log(mtext);
+//let hrefi = document.getElementsByTagName("href");
+//let ai = document.getElementsByTagName("a");
+/* patron de URL = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \?=.-]*)*\/?$/ */
+/*let pattern = /^\<\a href\=\"https?:\/\/([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \?=.-]*)*\/?$)\"\>(\W+*)\<\/\a\>/;
+while (found = pattern.exec(htext)){
+    console.log('href =', found[1]);
+    console.log('text =', found[2]);
+    console.log('path =', route);*/
+
+//
+
+
 
 request.on('error', (error) => {
   context.error(error);
@@ -180,60 +195,60 @@ fs.readFile(path, 'utf-8', (error, data) => {
     console.log('an error has occurred');
     console.log(error.stack);
   } else {
-    console.log('for', path, ' the content is ', data);  
+    console.log('for', path, ' the content is ', data);
   }
 });
 
 //Método open para obtener el descriptor del archivo
-  fs.open(path, 'r', (error, fd) => {
-    if (error) {
-      console.log('an error has occurred');
-      console.log(error.stack);
-    } else {
-      console.log('for', path, ' the file descriptor is ', fd);
-      
-    }
-  });
+fs.open(path, 'r', (error, fd) => {
+  if (error) {
+    console.log('an error has occurred');
+    console.log(error.stack);
+  } else {
+    console.log('for', path, ' the file descriptor is ', fd);
+
+  }
+});
 
 //Método stat para obtener detalles del archivo
 fs.stat(path, (err, data) => {
   if (err) {
     console.error(err)
     return
-  }else {
+  } else {
     console.log(data);
   }
 })
 
 process.stdout = route;
 });
-    
-    switch (ext){
-      case ''(path, ' es un archivo');
-    }else{
-    console.log(path, ' contiene un tipo de archivo no admitido. Se detendrá la ejecución ahora');
-    return;
-    }
-    Evaluando las opciones
-    switch(options){
-      case "-v":
-        validate('validate chosen');
-        break;
-      case "-s":
-        console.log('stats chosen');
-        break;
-      default:
-        console.log('default behaviour chosen');
-        break;
-    }
-    
+
+switch (ext) {
+  case ''(path, ' es un archivo');
+}else {
+  console.log(path, ' contiene un tipo de archivo no admitido. Se detendrá la ejecución ahora');
+  return;
+}
+Evaluando las opciones
+switch (options) {
+  case "-v":
+    validate('validate chosen');
+    break;
+  case "-s":
+    console.log('stats chosen');
+    break;
+  default:
+    console.log('default behaviour chosen');
+    break;
+}
+
 //Método readFile para obtener el contenido del archivo
 fs.readFile(path, 'utf-8', (error, data) => {
   if (error) {
     console.log('an error has occurred');
     console.log(error.stack);
   } else {
-    console.log('for', path, ' the content is ', data);  
+    console.log('for', path, ' the content is ', data);
   }
 });
 
@@ -244,15 +259,15 @@ let stringText = new RegExp(')[*]');
 
 
 
-const openMarkDown(usage.route)=>{
+const openMarkDown(usage.route)=> {
   fs.readFile(route, 'utf-8', (error, data) => {
     if (error) {
       console.log('an error has occurred');
       console.log(error.stack);
-  } else {
-    console.log('for', route, ' the content is ', data);  
-  }
-});
+    } else {
+      console.log('for', route, ' the content is ', data);
+    }
+  });
 }
 
 Mi codiguito
@@ -263,56 +278,57 @@ let tail = route.indexOf('.');
 console.log('la ruta contiene un punto en la posición ', tail, 'de la cadena');
 let extFile = route.slice(tail);
 console.log('la extensión del archivo es ', extFile);
-if (ext === false){extFile===''}
+if (ext === false) { extFile === '' }
 
 switch (extFile) {
   case '.md':
-      console.log('ruta conduce a un archivo markdown');
-      break;
+    console.log('ruta conduce a un archivo markdown');
+    break;
 
-const readFolder(usage.route)=>{
-  fs.readdir(usage.route, 'utf-8', (error, data) => {
-    if (error) {
-      console.log('an error has occurred');
-      console.log(error.stack);
-    } else {
-      console.log('for', route, ' the content is ', data);  
-    }
-})};
-
-const yargs = require('yargs'); //Para manejar los datos de entrada
-
-const argv = yargs
-    .command('mdlinks', {
-        mdlinks: {
-            description: 'calls mdlinks function',
-            alias: 'mdlinks function',
-            type: 'string',
+    const readFolder(usage.route)=> {
+      fs.readdir(usage.route, 'utf-8', (error, data) => {
+        if (error) {
+          console.log('an error has occurred');
+          console.log(error.stack);
+        } else {
+          console.log('for', route, ' the content is ', data);
         }
-    })
-    .option('-v', {
+      })
+    };
+
+    const yargs = require('yargs'); //Para manejar los datos de entrada
+
+    const argv = yargs
+      .command('mdlinks', {
+        mdlinks: {
+          description: 'calls mdlinks function',
+          alias: 'mdlinks function',
+          type: 'string',
+        }
+      })
+      .option('-v', {
         alias: 'validate',
         description: 'Tells if a link is valid or not',
         type: 'boolean',
-    })
-    
-    .option('-s', {
+      })
+
+      .option('-s', {
         alias: 'statistics',
         description: 'Tells facts about links found',
         type: 'boolean',
-    })
-    .argv;
+      })
+      .argv;
 
-if (argv.mdlinks) {
-    console.log('mdlinks selected');
-}
-
-if (argv._.includes('-v')) {
-    console.log('validate selected');
-    } else if ((argv._.includes('-s'))){
-        console.log('stats selected');
-    }else{
-        console.log('selected an option I cannot process')
+    if (argv.mdlinks) {
+      console.log('mdlinks selected');
     }
 
-console.log(argv);
+    if (argv._.includes('-v')) {
+      console.log('validate selected');
+    } else if ((argv._.includes('-s'))) {
+      console.log('stats selected');
+    } else {
+      console.log('selected an option I cannot process')
+    }
+
+    console.log(argv);
