@@ -8,6 +8,7 @@ const valid = require("./valid.js");
 const mdlinks = (route, options) => {
   callOpen(route);
   let val = options.v;
+  console.log (val);
   if (val === true){
     valid(listObjects)
     .then((data) => {
