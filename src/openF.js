@@ -1,56 +1,58 @@
-//Módulo para abrir archivos
+//Modulo para abrir archivos
 
-//Importando todos los módulos requeridos
-const chalk = require('chalk');
-const fs = require('fs');
-//const fs = require('fs').promises; Esto lo debo investigar!!!
-const showdown = require('showdown');
-const jsdom = require ('jsdom');
+//Importando los modulos requeridos
+const fs = require("fs");
+const showdown = require("showdown");
+const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+const printLinks = require("./print.js");
 
-//Método readFile para obtener el contenido del archivo
+//Funcion openF
 const openF = (route) => {
-    fs.readFile(route, 'utf-8', (error, data) => {
-        if (error) {
-            console.log('an error has occurred');
-            console.log(error.stack);
-        } else {
-            convert(data, route);
-        };
+  return new Promise((resolve, reject) => {
+    fs.readFile(route, "utf8", (error, data) => {
+      if (error) reject(error);
+      resolve(data);
     });
-
-//Función convertir (llamada desde open)
-const convert = (data, route) => {
-    let mtext = data;
-    const { Converter } = require('showdown');
-    let converter = new showdown.Converter();
-    let htext = converter.makeHtml(mtext);
-    console.log(htext);
-
-//Inicializando el paquete JSDOM para convertir HTML en un documento con objetos (DOM) y devolviendo la lista de nodos DOM
-    const dom = new JSDOM(htext);
-    const listOfNodes = dom.window.document.querySelectorAll("a");
-    console.log(listOfNodes);
-
-//Construyendo una clase "foundLinks", un objeto que contiene los links en el documento markdown analizado
-    class foundLinks {
-        constructor(href, text, route){
-            this.href = href;
-            this.text = text;
-            this.file = route;
-        }
-    };
-
-//Construyendo un array de objetos con forEach. Imprimiendo cada link encontrado con colorcitos chalk
-    listOfNodes.forEach(element => {
-        const newLinkFound = new foundLinks(element.href, element.textContent, route);
-        console.log(chalk.magentaBright('---begining of link---'));
-        console.log(chalk.magentaBright('href = ', newLinkFound.href));
-        console.log(chalk.blueBright('text = ', newLinkFound.text));
-        console.log(chalk.greenBright('file = ', newLinkFound.file));
-        console.log(chalk.greenBright('---end of link ---'));
-        console.log('');
-        });
-    };
+  });
 };
+
+//Funcion convert
+const convert = (data, route) => {
+  const Converter = require("showdown");
+  let converter = new showdown.Converter();
+  let htext = converter.makeHtml(data);
+//Inicializando el paquete JSDOM para convertir HTML en un documento con objetos (DOM) y construyendo la lista de nodos DOM
+  const dom = new JSDOM(htext);
+  const listOfNodes = dom.window.document.querySelectorAll("a");
+//Construyendo la clase "foundLinks", es la plantilla del objeto que contiene los links en el *.md
+  class foundLinks {
+    constructor(href, text, route) {
+      this.href = href;
+      this.text = text;
+      this.file = route;
+    }
+  }
+//Construyendo un array de objetos con forEach.
+  const listObjects = [];
+  listOfNodes.forEach((item) => {
+    const newLinkFound = new foundLinks(item.href, item.textContent, route);
+    listObjects.push(newLinkFound);
+  });
+  return listObjects;
+};
+
+const callOpen = (route) => {
+  openF(route)
+    .then((data) => {
+    const listObjects = convert(data, route);
+      printLinks(listObjects)
+    })
+    .catch((error) => {
+    console.error(error)
+    })
+}
+
 module.exports = openF;
+module.exports = convert;
+module.exports = callOpen;

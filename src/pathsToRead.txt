@@ -1,14 +1,10 @@
 Paths to read:
-C:/Users/USER/Documents/data/bog001-md-links/readable/folder/blar.md
-C:/Users/USER/Documents/data/bog001-md-links/readable/checklist.doc
-C:/Users/USER/Documents/data/bog001-md-links/readable/folder
-C:/Users/USER/Documents/data/bog001-md-links/readable/folder/piar.doc
-C:/Users/USER/Documents/data/bog001-md-links/readable/folder/notfound.md
-C:/Users/USER/Documents/data/bog001-md-links/readable/resources.md
-../readable/checklist.doc
-../readable/folder
-../readable/resources.doc
-../readable/folder/piar.md
-../readable/folder/blar.md
-../readable/notfound.txt
-../readable/notfound.md
+
+C:/Users/USER/Documents/data/bog001-md-links/readable/folderOfMDFiles/resources.md
+C:/Users/USER/Documents/data/bog001-md-links/readable/folderOfMDFiles/resources.doc
+C:/Users/USER/Documents/data/bog001-md-links/readable/folderOfMDFiles/
+
+./readable/folderOfMDFiles/resources.md
+./readable/folderOfMDFiles/resources.doc
+./readable/folderOfMDFiles
+

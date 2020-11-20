@@ -1,13 +1,19 @@
-//Contiene la función MDLinks
+//MDLinks recibe ruta, opciones y retorna una promesa que resuelve al array de objetos
 
-//Importando módulos requeridos
-const args = require('./args.js');
+//Importando modulos
+const callOpen = require("./openF.js");
+const valid = require("./valid.js");
 
-//Función
-const mdlinks = () =>{
-  console.log('mdlinks (path, options): ');
-  prompt();
-  args();
-}
-
-mdlinks();
+//Inicio de la funcion MDLinks
+const mdlinks = (route, options) => {
+  callOpen(route);
+  let val = options.v;
+  if (val === true){
+    valid(listObjects)
+    .then((data) => {
+    console.log(data)})
+    .catch((error) => {
+    console.error(error)});
+  };
+};
+module.exports = mdlinks;
